@@ -3,12 +3,8 @@
 var startButton = document.getElementById("start-quiz");
 var startScreen = document.getElementById("start-screen");
 var quizScreen = document.getElementById("quiz-screen");
-// var finalScore =
-// var timer = document.getElementById("timer");
-var timeLeft = 45;
-var timer = document.getElementById("timer");
-var timerId = setInterval(countdown, 1000);
 var endScreen = document.getElementById("end-screen");
+// var finalScore = ......
 
 // START BUTTON EVENT LISTENER AND FUNCTION TO NEXT SCREEN
 
@@ -17,18 +13,29 @@ startButton.addEventListener("click", function () {
 
   startScreen.classList.add("hide");
   quizScreen.classList.remove("hide");
+  console.log("begin timer countdown: ");
+  countDown();
 });
+
+// MORE VARIABLES DECLARED
+
+var timeLeft = 35;
+var timer = document.getElementById("timer");
 
 // DISPLAY TIMER FUNCTION
 
-function countdown() {
+function countDown() {
   if (timeLeft === 0) {
+    var timerId = setInterval(countDown, 1000);
     clearTimeout(timerId);
-    // onclick to go to last page
+    //GO TO END SCREEN
     quizScreen.classList.add("hide");
     endScreen.classList.remove("hide");
+
+    console.log("time is out, go to end screen.");
   } else {
-    timer.textContent = timeLeft + " seconds remaining!";
+    timer.innerHTML = timeLeft + " seconds remaining!";
+    timeLeft--;
   }
 }
 
