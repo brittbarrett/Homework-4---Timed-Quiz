@@ -5,9 +5,11 @@ var startScreen = document.getElementById("start-screen");
 var quizScreen = document.getElementById("quiz-screen");
 var endScreen = document.getElementById("end-screen");
 var questionDisplay = document.getElementById("question");
+var progressEl = document.getElementById("question-title");
 var timer = document.getElementById("timer");
-var timeLeft = 35;
+var timeLeft = 30;
 var timerId;
+
 // var finalScore = ......
 
 // RENDER QUIZ QUESTIONS
@@ -49,6 +51,10 @@ function countDown() {
   }
 }
 
+// PROGRESS FUNCTION
+
+// ON CLICK FOR THE QUESTIONS AND ANSWERS
+
 document.addEventListener("click", function (event) {
   // If the clicked element doesn't have the right selector, bail
   if (!event.target.matches(".answer-button")) {
@@ -57,13 +63,14 @@ document.addEventListener("click", function (event) {
     var correctAnswer = myQuestions[currentQuestion].answer;
     console.log("the correct answer:", correctAnswer);
 
-    // if (userChoice === correctAnswer) {
-    // currentQuestion++
-    // if the user chose right answer, then displayQuestion
-    // increment point value //
-    // } else {
-    //   // decrease time
-    // }
+    if (userChoice === correctAnswer) {
+      currentQuestion++;
+      displayQuestion();
+      // increment point value //
+    } else {
+      // decrease time
+      timeLeft -= 10;
+    }
   }
 });
 
