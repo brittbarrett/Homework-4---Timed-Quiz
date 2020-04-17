@@ -8,10 +8,20 @@ p {
 }
 
 h1 {
-  padding-left: 20px;
+  color: cadetblue;
+  font-family: "Fredericka the Great", cursive;
 }
 #start-screen {
   text-align: center;
+}
+
+#start-quiz {
+  border-radius: 50%;
+  background-color: cadetblue;
+  color: seashell;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 20px;
 }
 
 #question {
@@ -30,4 +40,36 @@ h1 {
   color: seashell;
   font-weight: bold;
   font-size: 15px;
+}
+
+#end-screen {
+  text-align: center;
+}
+
+img {
+  height: 400px;
+  width: 600px;
+}
+
+#quiz-image {
+  height: 200px;
+  width: 300px;
+}
+
+#score-text {
+  margin: 25px;
+  font-size: 25px;
+  font-weight: bold;
+  color: indianred;
+  font-family: "Fredericka the Great", cursive;
+}
+
+#question-title {
+  font-family: "Baloo Paaji 2", cursive;
+  color: darkgoldenrod;
+}
+
+#timer {
+  font-family: "Baloo Paaji 2", cursive;
+  color: indianred;
 }

@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Timed Quiz</title>
     <link rel="stylesheet" href="style.css" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <div class="container">
@@ -13,9 +17,15 @@
       <div id="start-screen">
         <h1>What do you know about Elephants?</h1>
 
+        
+
         <p>
-          Beat the timer on this simple quiz to see how well you know elephants! Answer the correct question to earn a point, answer the question incorrectly and 10 seconds will be subtracted from the timer. Good luck! 
+          Beat the timer on this simple quiz to see how well you know elephants! Answer the question correctly to earn a point, answer the question incorrectly and 10 seconds will be subtracted from the timer. Good luck! 
         </p>
+
+        <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="elephant image">
+
+        <br>
 
         <button id="start-quiz">Start quiz</button>
       </div>
@@ -41,13 +51,16 @@
           <!-- <button class="answer-button" id="btn3">
             <span id="choice3"></span> -->
           </button>
+          <br>
+          <img id="quiz-image" src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="elephant image">
         </div>
       </div>
 
       <!-- FINAL SCREEN -->
       <div class="hide" id="end-screen">
-        <h1>end content</h1>
-        <div>score: <span id="score"></span></div>
+        <h1>Game Over!</h1>
+        <div id="score-text">Score: <span id="score"></span></div>
+        <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="elephant image">
       </div>
     </div>
 

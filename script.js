@@ -63,14 +63,14 @@ document.addEventListener("click", function (event) {
     var correctAnswer = myQuestions[currentQuestion].answer;
     console.log("the correct answer:", correctAnswer);
 
-    if (userChoice === correctAnswer) {
-      currentQuestion++;
-      displayQuestion();
-      // increment point value //
-    } else {
-      // decrease time
-      timeLeft -= 10;
-    }
+    // if (userChoice === correctAnswer) {
+    //   currentQuestion++;
+    //   displayQuestion();
+    //   // increment point value //
+    // } else {
+    //   // decrease time
+    //   timeLeft -= 10;
+    // }
   }
 });
 
