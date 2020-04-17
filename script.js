@@ -4,11 +4,21 @@ var startButton = document.getElementById("start-quiz");
 var startScreen = document.getElementById("start-screen");
 var quizScreen = document.getElementById("quiz-screen");
 var endScreen = document.getElementById("end-screen");
-var timeLeft = 35;
+var questionDisplay = document.getElementById("question");
 var timer = document.getElementById("timer");
-var timerId = setInterval(countDown, 1000);
-
+var timeLeft = 35;
+var timerId;
 // var finalScore = ......
+
+// RENDER QUIZ QUESTIONS
+
+function displayQuestion(obj) {
+  questionDisplay.textContent = obj.question;
+
+  for (var i = 0; i < obj.choice.length; i++) {
+    document.getElementById("choice" + i).textContent = obj.choice[i];
+  }
+}
 
 // START BUTTON EVENT LISTENER AND FUNCTION TO NEXT SCREEN
 
@@ -18,14 +28,15 @@ startButton.addEventListener("click", function () {
   startScreen.classList.add("hide");
   quizScreen.classList.remove("hide");
   console.log("begin timer countdown: ");
+  timerId = setInterval(countDown, 1000);
   countDown();
+  displayQuestion(myQuestions[currentQuestion]);
 });
 
 // DISPLAY TIMER FUNCTION
 
 function countDown() {
   if (timeLeft === 0) {
-    var timerId = setInterval(countDown, 1000);
     clearTimeout(timerId);
     //GO TO END SCREEN
     quizScreen.classList.add("hide");
@@ -38,65 +49,57 @@ function countDown() {
   }
 }
 
-var myQuestions = [
-  new Question("who invented this?", ["douglas", "carole", "joe"], "joe"),
-  new Question("which is correct?", ["me", "you", "her"], "her"),
-  new Question("who do you like better?", ["emilie", "jp", "clara"], "clara"),
-];
-var quiz = new Quiz(myQuestions);
+document.addEventListener("click", function (event) {
+  // If the clicked element doesn't have the right selector, bail
+  if (!event.target.matches(".answer-button")) {
+    console.log("users choice:", event.target.textContent);
+    var userChoice = event.target.textContent;
+    var correctAnswer = myQuestions[currentQuestion].answer;
+    console.log("the correct answer:", correctAnswer);
 
-// QUIZ FUNCTIONS
-
-function Questions(text, choices, answer) {
-  this.text = text;
-  this.choices = choices;
-  this.answer = answer;
-}
-
-myQuestions.prototype.correctAnswer = function (choice) {
-  return choice === this.answer;
-};
-// need further explanation on what the prototype means here
-
-// confused a bit here... could i just continue on the previous "onClick" for when timeLeft === 0 and run the showScores function there?
-function populate() {
-  if (timeLeft === 0) {
-    showScores();
-  } else {
-    var element = document.getElementById("question");
-    element.innerHTML = quiz.getQuestionIndex().text;
-
-    var choices = quiz.getQuestionIndex().choices;
-    for (var i = 0; i < choices.length; i++) {
-      var element = document.getElementById("choice" + i);
-      element.innerHTML = choices[i];
-      guess("btn" + i, choices[i]);
-    }
-    // showProgress();
+    // if (userChoice === correctAnswer) {
+    // currentQuestion++
+    // if the user chose right answer, then displayQuestion
+    // increment point value //
+    // } else {
+    //   // decrease time
+    // }
   }
-}
+});
 
-function guess(id, guess) {
-  var button = document.getElementById(id);
-  button.onclick = function () {
-    quiz.guess(guess);
-    populate();
-  };
-}
+// var answerButtons = document.getElementsByClassName("answer-button");
+// console.log(answerButtons);
 
-// function showProgress() {
-//   var currentQuestionNumber = quiz.questionIndex + 1;
-//   var element = document.getElementById("progress");
-//   element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.myQuestions.length;
-// };
-
-// function showScores() {
-//   var gameOverHtml = document.getElementById("score");
-//   gameOverHtml +
-
+// for (var i = 0; i < answerButtons.length; i++) {
+//   console.log(answerButtons[i]);
 // }
 
-// var lastQuestion = myQuestions.length - 1;
+var myQuestions = [
+  {
+    question: "How many different species of elephant are there?",
+    choice: ["Three", "Two", "One"],
+    answer: "Three!",
+  },
+  {
+    question: "Which gender of African elephants have tusks?",
+    choice: ["Male", "Female", "Both"],
+    answer: "Both",
+  },
+  {
+    question: "An elephant herd consists of ...?",
+    choice: ["Males & females", "Related females", "Related males"],
+    answer: "Related females",
+  },
+  {
+    question: "On average, how many hours a day does an elephant spend eating?",
+    choice: ["4", "10", "16"],
+    answer: "16",
+  },
+];
+
+var currentQuestion = 0;
+console.log(myQuestions);
+console.log(myQuestions[currentQuestion].question);
 
 // END SCREEN
 
