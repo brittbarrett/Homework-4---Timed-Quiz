@@ -32,7 +32,7 @@ var questionDisplay = document.getElementById("question");
 var progressElement = document.getElementById("question-title");
 var choicesElement = document.getElementById("choices");
 var timer = document.getElementById("timer");
-var timeLeft = 30;
+var timeLeft = 20;
 var timerId;
 // var finalScore = ......
 // RENDER QUIZ QUESTIONS
