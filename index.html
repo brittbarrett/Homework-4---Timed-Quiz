@@ -6,64 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Timed Quiz</title>
     <link rel="stylesheet" href="style.css" />
-    
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap" rel="stylesheet">
-
+    <style>
+      img{
+        height: 200px;
+        width: 300px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <!-- STARTING SCREEN -->
       <div id="start-screen">
         <h1>What do you know about Elephants?</h1>
-
-        
-
         <p>
-          Beat the timer on this simple quiz to see how well you know elephants! Answer the question correctly to earn a point, answer the question incorrectly and 10 seconds will be subtracted from the timer. Good luck! 
+          Beat the timer on this simple quiz to see how well you know elephants! Answer the question correctly to earn a point, answer the question incorrectly and 10 seconds will be subtracted from the timer. Good luck!
         </p>
-
         <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="elephant image">
-
         <br>
-
         <button id="start-quiz">Start quiz</button>
       </div>
-
       <!-- QUIZ QUESTIONS SCREEN -->
       <div class="hide" id="quiz-screen">
         <div id="timer"></div>
-
-        <h4 id="question-title">Question: </h4>
-
-        <h3 id="question"></h3>
-
-        <div class="choices">
-          <button class="answer-button" id="btn0">
-            <span id="choice0"></span>
-          </button>
-          <button class="answer-button" id="btn1">
-            <span id="choice1"></span>
-          </button>
-          <button class="answer-button" id="btn2">
-            <span id="choice2"></span>
-          </button>
+        <h2 id="question-title">Question: </h2>
+        <div id="choices"></div>
           <!-- <button class="answer-button" id="btn3">
             <span id="choice3"></span> -->
           </button>
           <br>
-          <img id="quiz-image" src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="elephant image">
-        </div>
+           <img id="quiz-image" src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="elephant image"> 
       </div>
-
       <!-- FINAL SCREEN -->
       <div class="hide" id="end-screen">
         <h1>Game Over!</h1>
         <div id="score-text">Score: <span id="score"></span></div>
         <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="elephant image">
-      </div>
+      </div> 
     </div>
-
     <script src="./script.js"></script>
   </body>
 </html>

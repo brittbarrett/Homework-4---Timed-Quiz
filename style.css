@@ -73,3 +73,11 @@ img {
   font-family: "Baloo Paaji 2", cursive;
   color: indianred;
 }
+
+body {
+  background-color: lemonchiffon;
+}
+
+/* .container {
+  background-color: lemonchiffon;
+} */
