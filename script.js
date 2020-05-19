@@ -60,15 +60,18 @@ function submitUser() {
   console.log(userObj);
   scoreArray.push(userObj);
   localStorage.setItem("userScore", JSON.stringify(scoreArray));
-  displayScore();
+  displayScore;
 }
-//displayScore();
+displayScore();
+submitUser();
 function displayScore() {
-  // hide this element document.querySelector("#userName")
   //display all the scores
   //display the current high score
+
   var highScoreIndex = 0;
   for (var i = 0; i < scoreArray.length; i++) {
+    document.getElementById("score").textContent = scoreArray[i].points;
+
     if (scoreArray[i].points > scoreArray[highScoreIndex].points) {
       highScoreIndex = i;
     }
@@ -210,4 +213,3 @@ var answerButtons = document.getElementsByClassName("answer-button");
 // console.log(myQuestions);
 // console.log(myQuestions[currentQuestionIndex].question);
 // END SCREEN
-document.getElementById("score").textContent = "asdfghjkjhgfdsdfghjk";

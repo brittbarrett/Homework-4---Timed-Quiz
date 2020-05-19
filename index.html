@@ -17,11 +17,7 @@
   </head>
   <body>
     <div class="container">
-      <div id="userName">
-        <input type="text" id="userInitial"><button onclick="submitUser()">Submit</button>
-      </div>
-      <div id="ranking"></div>
-      <div id="topScore"></div>
+      
       <!-- STARTING SCREEN -->
       <div id="start-screen">
         <h1>What do you know about Elephants?</h1>
@@ -47,6 +43,12 @@
       <div class="hide" id="end-screen">
         <h1>Game Over!</h1>
         <div id="score-text">Score: <span id="score"></span></div>
+        <div id="userName">
+          <input type="text" id="userInitial"><button onclick="submitUser()">Submit</button>
+        </div>
+        <div id="pastScores-text">Past Scores: </div>
+        <div id="ranking"></div>
+        <div id="topScore"></div>
         <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="elephant image">
       </div> 
     </div>
